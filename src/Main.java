@@ -25,5 +25,11 @@ public class Main {
         //task3
         System.out.println("Задание 3");
 
+        int year = 2140;
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        System.out.println(year + " год високосный.");
+        } else {
+        System.out.println(year + " год не високосный.");
+        }
     }
 }
