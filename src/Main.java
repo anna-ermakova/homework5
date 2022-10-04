@@ -27,9 +27,23 @@ public class Main {
 
         int year = 2140;
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-        System.out.println(year + " год високосный.");
+            System.out.println(year + " год високосный.");
         } else {
-        System.out.println(year + " год не високосный.");
+            System.out.println(year + " год не високосный.");
+        }
+
+        //task4
+        System.out.println("Задание 4");
+
+        int deliveryDistance = 120;
+        int minDistance = 20;//km
+        int deltaDistance = 40;//km шаг расстояния для увеличения срока доставки
+        int minDeliveryInDays = 1;// минимум дней на доставку
+        int deltaDeliveryInDays = 1;// дней. Шаг увеличения дней доставки
+        if (deliveryDistance-minDistance>0){
+            System.out.println("Потребуется дней: "+ (deliveryDistance/deltaDistance+deltaDeliveryInDays));
+        }else {
+            System.out.println("На доставку потребуется дней: " + minDeliveryInDays);
         }
     }
 }
