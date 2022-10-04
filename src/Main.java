@@ -41,9 +41,57 @@ public class Main {
         int minDeliveryInDays = 1;// минимум дней на доставку
         int deltaDeliveryInDays = 1;// дней. Шаг увеличения дней доставки
         if (deliveryDistance-minDistance>0){
-            System.out.println("Потребуется дней: "+ (deliveryDistance/deltaDistance+deltaDeliveryInDays));
+            System.out.println("На доставку потребуется дней: "+ (deliveryDistance/deltaDistance+deltaDeliveryInDays));
         }else {
             System.out.println("На доставку потребуется дней: " + minDeliveryInDays);
         }
+
+        //task5
+        System.out.println("Задание 5");
+        int monthNumber=66;
+        switch (monthNumber){
+            case 1:
+                System.out.println("Зима");
+                break;
+            case 2:
+                System.out.println("Зима");
+                break;
+            case 3:
+                System.out.println("Весна");
+                break;
+            case 4:
+                System.out.println("Весна");
+                break;
+            case 5:
+                System.out.println("Весна");
+                break;
+            case 6:
+                System.out.println("Лето");
+                break;
+            case 7:
+                System.out.println("Лето");
+                break;
+            case 8:
+                System.out.println("Лето");
+                break;
+            case 9:
+                System.out.println("Осень");
+                break;
+            case 10:
+                System.out.println("Осень");
+                break;
+            case 11:
+                System.out.println("Осень");
+                break;
+            case 12:
+                System.out.println("Зима");
+                break;
+            default:
+                System.out.println("Такого месяца не существует");
+
+        }
+
+
+
     }
 }
