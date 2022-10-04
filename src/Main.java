@@ -76,26 +76,60 @@ public class Main {
                 //task6
                 System.out.println("Задание 6");
 
-                int age = 19;
-                double salary = 58_000;//руб.
+                int ageClient = 19;
+                double salaryClient = 58_000;//руб.
                 int minCoefficient1 = 2;//коэф. зарплаты для клиентов младше 23 лет
                 int minCoefficient2 = 3;//коэф. зарплаты для клиентов от 23 лет и старше
                 double minLimit = 1.2;//увеличение лимита в раз при зп>=50т.р.
                 double maxLimit = 1.5;// увеличение лимита в раз при зп >=80 т.р.
-                if (age < 23 && salary < 50_000) {
-                    System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) + " рублей.");}
-                    if (age < 23 && salary >= 80_000){
-                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.5) + " рублей.");}
-                    if (age < 23 && salary >= 50_000 && salary<80_000){
-                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.2) + " рублей.");}
-                    if (age >= 23 && salary < 50_000){
-                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) + " рублей.");}
-                    if (age >= 23 && salary >= 80_000){
-                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.5) + " рублей.");}
-                    if (age >= 23 && salary >= 50_000 && salary<80_000){
-                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.2) + " рублей.");}
+                if (ageClient < 23 && salaryClient < 50_000) {
+                    System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salaryClient * 2) + " рублей.");}
+                    if (ageClient < 23 && salaryClient >= 80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salaryClient * 2 * 1.5) + " рублей.");}
+                    if (ageClient < 23 && salaryClient >= 50_000 && salaryClient<80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salaryClient * 2 * 1.2) + " рублей.");}
+                    if (ageClient >= 23 && salaryClient < 50_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salaryClient * 3) + " рублей.");}
+                    if (ageClient >= 23 && salaryClient >= 80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salaryClient * 3 * 1.5) + " рублей.");}
+                    if (ageClient >= 23 && salaryClient >= 50_000 && salaryClient<80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salaryClient * 3 * 1.2) + " рублей.");}
 
 
+        //task7
+        System.out.println("Задание 7");
+        int age=25;
+        int salary =60_000;
+        int wantedSum = 330_000;
+        int period=12;// месяцев срок кредита
+        int maxMonthlyPayment=salary/2;//ежемесячный платеж
+        double creditRate1=10.0;// 10% годовых ставка для клиентов от 30лет и старше
+        double creditRate2=11.0;// 11% годовых ставка для клиентов младше 23 лет
+        double creditRate3=9.3;// 9,3% годовых ставка для клиентов с зп больше 80т.р.
 
+        double creditPayment1=((wantedSum/creditRate1+wantedSum)/period);
+        double creditPayment2=((wantedSum/creditRate2+wantedSum)/period);
+        double creditPayment3=((wantedSum/creditRate3+wantedSum)/period);
+        boolean monthlyPayment1=maxMonthlyPayment>creditPayment1;
+        boolean monthlyPayment2=maxMonthlyPayment>creditPayment2;
+        boolean monthlyPayment3=maxMonthlyPayment>creditPayment3;
+
+        if ( salary>80_000 && monthlyPayment3) {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthlyPayment + " рублей. Платеж по кредиту " + creditPayment3 + " рублей. Одобрено");
+        } else if (monthlyPayment2 && age<30 && age>=23 && salary<=80_000) {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthlyPayment + " рублей. Платеж по кредиту " + creditPayment2 + " рублей. Одобрено");
+        } else if (monthlyPayment1 && age<23 && salary<=80) {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthlyPayment + " рублей. Платеж по кредиту " + creditPayment1 + " рублей. Одобрено");
+        }else {
+            System.out.println("Максимальный платеж при ЗП " + salary + " равен " + maxMonthlyPayment + " рублей. Отказано.");
         }
     }
+    }
+
+
+
+
+
+
+
+
