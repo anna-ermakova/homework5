@@ -40,16 +40,16 @@ public class Main {
         int deltaDistance = 40;//km шаг расстояния для увеличения срока доставки
         int minDeliveryInDays = 1;// минимум дней на доставку
         int deltaDeliveryInDays = 1;// дней. Шаг увеличения дней доставки
-        if (deliveryDistance-minDistance>0){
-            System.out.println("На доставку потребуется дней: "+ (deliveryDistance/deltaDistance+deltaDeliveryInDays));
-        }else {
+        if (deliveryDistance - minDistance > 0) {
+            System.out.println("На доставку потребуется дней: " + (deliveryDistance / deltaDistance + deltaDeliveryInDays));
+        } else {
             System.out.println("На доставку потребуется дней: " + minDeliveryInDays);
         }
 
         //task5
         System.out.println("Задание 5");
-        int monthNumber=6;
-        switch (monthNumber){
+        int monthNumber = 6;
+        switch (monthNumber) {
             case 12:
             case 1:
             case 2:
@@ -72,10 +72,30 @@ public class Main {
                 break;
             default:
                 System.out.println("Такого месяца не существует");
+        }
+                //task6
+                System.out.println("Задание 6");
+
+                int age = 19;
+                double salary = 58_000;//руб.
+                int minCoefficient1 = 2;//коэф. зарплаты для клиентов младше 23 лет
+                int minCoefficient2 = 3;//коэф. зарплаты для клиентов от 23 лет и старше
+                double minLimit = 1.2;//увеличение лимита в раз при зп>=50т.р.
+                double maxLimit = 1.5;// увеличение лимита в раз при зп >=80 т.р.
+                if (age < 23 && salary < 50_000) {
+                    System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) + " рублей.");}
+                    if (age < 23 && salary >= 80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.5) + " рублей.");}
+                    if (age < 23 && salary >= 50_000 && salary<80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.2) + " рублей.");}
+                    if (age >= 23 && salary < 50_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) + " рублей.");}
+                    if (age >= 23 && salary >= 80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.5) + " рублей.");}
+                    if (age >= 23 && salary >= 50_000 && salary<80_000){
+                        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.2) + " рублей.");}
+
+
 
         }
-
-
-
     }
-}
